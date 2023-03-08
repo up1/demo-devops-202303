@@ -1,5 +1,9 @@
-FROM node:16-alpine3.16
+FROM node:16-alpine3.16 as step01
 WORKDIR /app
 COPY . .
 RUN npm install
-CMD ["npm", "run", "dev"]
+RUN npm run build
+
+# Multi stage build
+FROM nginx:1.23.3 
+COPY --from=step01 /app/dist /usr/share/nginx/html
