@@ -15,3 +15,8 @@ Build image
 $docker image build -t web:1.0 . 
 $docker image ls
 ```
+
+Create a container
+```
+$docker container run -d --name c1 web:1.0
+```
