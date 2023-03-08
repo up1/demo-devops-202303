@@ -6,10 +6,19 @@ services:
       context: ./web-react
     ports:
       - 8888:80
+    depends_on:
+      backend:
+        condition: service_healthy
   
   backend:
     image: somkiat/api:1.0
     build: 
       context: ./back-springboot2
+    healthcheck:
+      test: "curl --fail --silent localhost:8080/actuator/health | grep UP || exit 1"
+      interval: 5s
+      timeout: 5s
+      retries: 5
+      start_period: 5s
     
   
