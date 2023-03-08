@@ -1,12 +1,14 @@
 version: '3'
 services:
   frontend:
+    image: somkiat/web:1.0
     build: 
       context: ./web-react
     ports:
       - 8888:80
   
   backend:
+    image: somkiat/api:1.0
     build: 
       context: ./back-springboot2
     
