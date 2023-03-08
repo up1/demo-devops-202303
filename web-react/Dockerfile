@@ -9,3 +9,4 @@ RUN npm run build
 FROM nginx:1.23.3 
 EXPOSE 8888
 COPY --from=step01 /app/dist /usr/share/nginx/html
+COPY --from=step01 /app/nginx.conf /etc/nginx/nginx.conf

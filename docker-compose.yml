@@ -1,0 +1,13 @@
+version: '3'
+services:
+  frontend:
+    build: 
+      context: ./web-react
+    ports:
+      - 8888:80
+  
+  backend:
+    build: 
+      context: ./back-springboot2
+    
+  
