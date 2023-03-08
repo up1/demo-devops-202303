@@ -6,7 +6,6 @@ COPY . .
 RUN npm run build
 
 # Multi stage build
-FROM nginx:1.23.3 
-EXPOSE 8888
+FROM nginx:1.23.3
 COPY --from=step01 /app/dist /usr/share/nginx/html
 COPY --from=step01 /app/nginx.conf /etc/nginx/nginx.conf
