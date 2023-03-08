@@ -18,5 +18,5 @@ $docker image ls
 
 Create a container
 ```
-$docker container run -d --name c1 web:1.0
+$docker container run -d --name c1 -p 9999:80 web:1.0
 ```
