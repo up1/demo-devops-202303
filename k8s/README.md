@@ -10,6 +10,8 @@ $minikube dashboard --url
 $kubectl get node
 NAME       STATUS   ROLES           AGE     VERSION
 minikube   Ready    control-plane   5h41m   v1.26.1
+
+$kubectl get pod -o wide
 ```
 
 Deploy
