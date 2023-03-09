@@ -20,3 +20,12 @@ Create a container
 ```
 $docker container run -d --name c1 -p 9999:80 web:1.0
 ```
+
+## Docker compose
+```
+$docker compose build
+$docker compose up -d
+$docker compose ps
+$docker compose logs --follow
+$docker compose down
+```
