@@ -1,0 +1,10 @@
+version: '3'
+services:
+  front:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    image: web:20
+    container_name: c1
+    ports:
+      - 9999:80
