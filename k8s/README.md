@@ -31,3 +31,8 @@ Access to frontend
 ```
 $minikube service react-nginx-service --url
 ```
+
+Access to backend
+```
+$minikube service backend --url
+```
