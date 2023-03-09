@@ -11,7 +11,7 @@ $kubectl get node
 NAME       STATUS   ROLES           AGE     VERSION
 minikube   Ready    control-plane   5h41m   v1.26.1
 
-$kubectl get pod -o wide
+$kubectl get node -o wide
 ```
 
 Deploy
@@ -20,6 +20,7 @@ $kubectl apply -f backend.yml
 $kubectl apply -f frontend.yml
 
 $kubectl get pod
+$kubectl get pod -o wide
 kubectl describe pod
 
 $kubectl get deployment
