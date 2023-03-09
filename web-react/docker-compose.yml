@@ -5,6 +5,6 @@ services:
       context: .
       dockerfile: Dockerfile
     image: web:20
-    container_name: c1
-    ports:
-      - 9999:80
+    # container_name: c1
+    # ports:
+    #   - 9999:80

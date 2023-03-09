@@ -9,4 +9,4 @@ RUN npm run build
 FROM nginx:1.23.3
 RUN apt update && apt install wget -y
 COPY --from=step01 /app/dist /usr/share/nginx/html
-# COPY --from=step01 /app/nginx.conf /etc/nginx/nginx.conf
+COPY --from=step01 /app/nginx.conf /etc/nginx/nginx.conf

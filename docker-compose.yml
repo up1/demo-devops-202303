@@ -5,7 +5,7 @@ services:
     build: 
       context: ./web-react
     ports:
-      - 8888:80
+      - 9999:80
     depends_on:
       backend:
         condition: service_healthy
