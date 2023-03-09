@@ -5,6 +5,15 @@
 $minikube start --driver=docker --alsologtostderr
 $minikube dashboard --url
 ```
+
+### Prepare docker image 3 versions
+
+````
+$docker image push somkiat/api:1.0
+$docker image push somkiat/api:2.0
+$docker image push somkiat/api:3.0
+````
+
 ### Working with kubectl
 ```
 $kubectl get node
