@@ -1,17 +1,11 @@
 version: '3'
 services:
   frontend:
-    image: somkiat/web:1.0
+    image: web:1.0
     ports:
       - 9999:80
   
   backend:
-    image: somkiat/api:1.0
-    healthcheck:
-      test: "curl --fail --silent localhost:8080/actuator/health | grep UP || exit 1"
-      interval: 5s
-      timeout: 5s
-      retries: 5
-      start_period: 5s
+    image: api:1.0
     
   

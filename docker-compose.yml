@@ -1,7 +1,7 @@
 version: '3'
 services:
   frontend:
-    image: somkiat/web:1.0
+    image: web:1.0
     build: 
       context: ./web-react
     ports:
@@ -14,6 +14,8 @@ services:
     image: somkiat/api:1.0
     build: 
       context: ./back-springboot2
+    environment:
+      - MY_PASSWORD=xyz
     healthcheck:
       test: "curl --fail --silent localhost:8080/actuator/health | grep UP || exit 1"
       interval: 5s
