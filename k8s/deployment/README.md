@@ -16,8 +16,8 @@ $kubectl get po -w
 
 ### Step 3 :: Recreate
 ```
-$kubectl apply -f 01-recreate.yml
-kubectl get ingress -o wide
+$kubectl apply -f 0/-recreate.yml
+$kubectl get po -w
 ```
 
 ### Step 4 :: Testing
