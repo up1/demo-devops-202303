@@ -13,6 +13,13 @@ $kubectl get po -w
 ```
 
 ### Step 3 :: Deploy ingress
+
+[Install addons :: ingress](https://kubernetes.io/docs/tasks/access-application-cluster/ingress-minikube/)
+```
+$minikube addons enable ingress
+$kubectl get pods -n ingress-nginx
+```
+
 ```
 $kubectl apply -f ingress.yml
 kubectl get ingress -o wide
