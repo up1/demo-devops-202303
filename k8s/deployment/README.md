@@ -28,3 +28,11 @@ $minikube service backend --url
 $curl http://ip:port/hi
 $curl https://ip:port/hi
 ```
+
+Forward port with `kubectl`
+```
+$kubectl port-forward service/backend 8080:8080
+```
+
+### References
+* kubectl port-forward service/mongo 28015:27017
