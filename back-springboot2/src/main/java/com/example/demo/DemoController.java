@@ -9,6 +9,6 @@ public class DemoController {
 
     @GetMapping("/hi")
     public Hello sayHi() {
-        return new Hello("Hello, from spring boot 2345678910");
+        return new Hello("Hello, from spring boot 2023");
     }
 }
