@@ -1,31 +1,4 @@
-# Step with Docker
-
-
-## React
-Dockerfile
-```
-FROM node:16-alpine3.16
-WORKDIR /app
-COPY . .
-RUN npm install
-```
-
-Build image
-```
-$docker image build -t web:1.0 . 
-$docker image ls
-```
-
-Create a container
-```
-$docker container run -d --name c1 -p 9999:80 web:1.0
-```
-
-## Docker compose
-```
-$docker compose build
-$docker compose up -d
-$docker compose ps
-$docker compose logs --follow
-$docker compose down
-```
+# Workshop
+* [Go to workshop](https://github.com/up1/demo-devops-202303/wiki)
+  * Frontend with ReactJS
+  * Backend with Spring Boot 2 
