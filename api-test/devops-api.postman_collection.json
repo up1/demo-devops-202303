@@ -1,0 +1,66 @@
+{
+	"info": {
+		"_postman_id": "cc98a218-7f7b-49e8-a1e0-5274be9978f1",
+		"name": "devops-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1453931",
+		"_collection_link": "https://red-firefly-245852.postman.co/workspace/XYZ~e14b2de0-4177-40ee-a22d-9b83d5d73aff/collection/1453931-cc98a218-7f7b-49e8-a1e0-5274be9978f1?action=share&creator=1453931&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "http://127.0.0.1:8080/hi",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Your test name\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.message).to.eql('Hello, from spring boot 2023');",
+							"});",
+							"",
+							"pm.test(\"Schema is valid\", function () {",
+							"    var schema = {",
+							"        type: \"object\",",
+							"        properties: {",
+							"            message: {",
+							"                type: \"string\"",
+							"            }",
+							"        },",
+							"        required: [\"message\"],",
+							"    };",
+							"",
+							"    var response = pm.response.json();",
+							"    pm.expect(tv4.validate(response, schema)).to.be.true;",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8080/hi",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"hi"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
