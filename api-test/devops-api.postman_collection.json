@@ -46,13 +46,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://127.0.0.1:8080/hi",
+					"raw": "http://host.docker.internal:8080/hi",
 					"protocol": "http",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"host",
+						"docker",
+						"internal"
 					],
 					"port": "8080",
 					"path": [
