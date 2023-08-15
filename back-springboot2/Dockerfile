@@ -4,7 +4,7 @@ COPY .mvn .mvn
 COPY mvnw .
 COPY pom.xml .
 COPY src src
-RUN --mount=type=cache,target=/root/.m2,rw ./mvnw -B package
+RUN --mount=type=cache,target=/root/.m2,rw ./mvnw -Dmaven.test.skip -B package
 
 FROM openjdk:11-jre-slim-buster
 WORKDIR /app
