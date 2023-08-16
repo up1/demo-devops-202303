@@ -2,6 +2,9 @@ version: '3'
 services:
   api_test:
     build: ./api-test
+    tty: true
+    volumes:
+      - ./report:/etc/newman/newman
 
   frontend:
     image: somkiat/web:1.1
