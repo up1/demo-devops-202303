@@ -5,6 +5,11 @@ services:
     tty: true
     volumes:
       - ./report:/etc/newman/newman
+  
+  ui_test:
+    build: ./ui-test
+    volumes:
+      - ./ui-test-report:/app/report
 
   frontend:
     image: somkiat/web:1.1
