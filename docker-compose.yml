@@ -1,7 +1,10 @@
 version: '3'
 services:
+  api_test:
+    build: ./api-test
+
   frontend:
-    image: web:1.0
+    image: somkiat/web:1.1
     build: 
       context: ./web-react
     ports:

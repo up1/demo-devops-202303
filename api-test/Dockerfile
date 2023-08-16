@@ -1,3 +1,3 @@
-FROM postman/newman:alpine
-WORKDIR /work
-COPY *.json .
+FROM postman/newman
+COPY devops-api.postman_collection.json /etc/newman/demo.json
+CMD [ "run", "demo.json" ]
