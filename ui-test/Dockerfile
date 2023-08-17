@@ -3,4 +3,4 @@ WORKDIR /app
 COPY requirement.txt .
 RUN pip install -r requirement.txt
 COPY . .
-CMD [ "robot", "-o", "/app/report/", "*.robot" ]
+CMD [ "robot", "-o", "/app/report/output.xml", "*.robot" ]
