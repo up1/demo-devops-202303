@@ -1,5 +1,6 @@
 *** Settings ***
 Library    SeleniumLibrary
+Library    Collections
 Test Teardown  Close All Browsers
 
 *** Test Cases ***
@@ -14,6 +15,5 @@ Check hello message
 Try to open in browser
     [Arguments]  ${target_url}  ${browser_type}
     Open Browser    ${target_url}    ${browser_type} 
-    ...  remote_url=http://188.166.239.114:4444/wd/hub
-    ...  desired_capabilities=browserName:chrome
+    ...  remote_url=http://188.166.239.114:4444
     Maximize Browser Window
