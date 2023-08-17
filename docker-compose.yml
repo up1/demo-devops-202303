@@ -35,5 +35,15 @@ services:
       timeout: 5s
       retries: 5
       start_period: 5s
+
+  sonarscanner:
+    image: sonarsource/sonar-scanner-cli
+    environment:
+      - SONAR_HOST_URL=http://188.166.216.162:9000
+      - SONAR_LOGIN=admin
+      - SONAR_PASSWORD=xitgmLwmp
+      - SONAR_PROJECT_BASE_DIR=/app
+    volumes:
+      - ./back-springboot2:/app
     
   
