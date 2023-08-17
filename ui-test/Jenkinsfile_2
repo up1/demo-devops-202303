@@ -1,0 +1,59 @@
+pipeline {
+    agent {
+        label 'docker01'
+    }
+
+    stages {
+        stage('1. Check code') {
+            steps {
+                git branch: 'main', url: 'https://github.com/up1/demo-devops-202303.git'
+            }
+        }
+        stage('2. Build') {
+            parallel {
+                stage('2.1 Static code analysis with SonarQube') {
+                    steps {
+                        build wait: false, job: 'somkiat_sonar'
+                    }
+                }
+                stage('2.2 Build docker image') {
+                    steps {
+                        sh 'docker compose build frontend'
+                        sh 'docker compose build backend'
+                    }
+                }
+            }
+        }
+        stage('3. Push image of backend to registry') {
+            steps {
+                withCredentials([usernamePassword(credentialsId: 'doocker_hub', passwordVariable: 'DOCKER_PASS', usernameVariable: 'DOCKER_USER')]) {
+                    sh '''
+                    docker login -u $DOCKER_USER -p $DOCKER_PASS
+                    docker image push somkiat/api:$BUILD_NUMBER
+                    '''
+                }
+            }
+        }
+        stage('4. Deploy on dev server') {
+            steps {
+                echo 'test'
+            }
+        }
+        stage('5. API testing') {
+            steps {
+                echo 'test'
+            }
+        }
+        stage('6. UI testing') {
+            steps {
+                echo 'test'
+            }
+        }
+    }
+
+    post {
+        always {
+            sh 'docker compose down'
+        }
+    }
+}
