@@ -4,6 +4,7 @@ COPY .mvn .mvn
 COPY mvnw .
 COPY pom.xml .
 COPY src src
+RUN apt-get update && apt-get install dos2unix -y && dos2unix mvnw && chmod +x mvnw
 RUN --mount=type=cache,target=/root/.m2,rw ./mvnw -Dmaven.test.skip -B package
 
 FROM openjdk:11-jre-slim-buster
