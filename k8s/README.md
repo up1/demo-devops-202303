@@ -36,6 +36,17 @@ $kubectl get deployment
 $kubectl get service
 ```
 
+Forward port of pod of backend
+```
+$kubectl port-forward <name of pod> 8080:8080
+```
+
+Forward port of pod of frontend
+```
+
+$kubectl port-forward <name of pod> 9999:80
+```
+
 Access to frontend
 ```
 $minikube service react-nginx-service --url
