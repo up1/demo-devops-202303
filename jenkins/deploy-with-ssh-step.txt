@@ -1,0 +1,32 @@
+pipeline {
+    agent any
+    stages {
+        stage('ssh step') {
+            steps {
+                script{
+                     
+                    cleanWs()
+                    sh "echo 'hello' >> file1.txt"
+                     
+                    echo 'Local files.....'       
+                    sh 'ls -l'
+ 
+                    command='''
+                        ls -l
+                        date
+                        cat /etc/os-release
+                    '''
+                         
+ 
+                  // Copy file to remote server 
+                  
+                   
+                  // Execute commands
+                  
+                     
+                }
+            }
+        }
+    }
+         
+}
