@@ -16,7 +16,7 @@ services:
     build: 
       context: ./web-react
     ports:
-      - 9999:80
+      - ${FRONTEND_PORT:-9999}:80
     depends_on:
       backend:
         condition: service_healthy
@@ -26,7 +26,7 @@ services:
     build: 
       context: ./back-springboot2
     ports:
-      - 8080:8080
+      - ${BACKEND_PORT:-8080}:8080
     environment:
       - MY_PASSWORD=xyz
     healthcheck:
