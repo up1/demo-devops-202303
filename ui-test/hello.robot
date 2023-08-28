@@ -4,7 +4,7 @@ Library    Collections
 Test Teardown  Close All Browsers
 
 *** Variables ***
-${URL}       http://128.199.99.121:9999
+${URL}       http://174.138.24.94:9999
 
 #robot -v URL:http://www.google.com hello.robot
 
