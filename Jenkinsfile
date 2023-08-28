@@ -18,7 +18,9 @@ pipeline {
         }
         stage('3. Create container') {
             steps {
-                sh 'docker compose up -d frontend'
+                sh '''export FRONTEND_PORT=3000
+                    export BACKEND_PORT=8888
+                    docker compose up -d frontend'''
             }
         }
         stage('4. API testing') {
@@ -34,7 +36,8 @@ pipeline {
         }
         stage('5. UI testing') {
             steps {
-                sh 'docker compose up ui_test --abort-on-container-exit --build'
+                sh '''export FRONTEND_URL=http://174.138.24.94:3000
+                docker compose up ui_test --abort-on-container-exit --build'''
             }
             post { 
                 always {
