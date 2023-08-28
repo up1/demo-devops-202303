@@ -10,6 +10,8 @@ services:
     build: ./ui-test
     volumes:
       - ./ui-test-report:/app/report
+    environment:
+      - FRONTEND_URL=http://174.138.24.94:3000
 
   frontend:
     image: somkiat/web:1.1
