@@ -38,7 +38,7 @@ pipeline {
             }
             post { 
                 always {
-                    junit 'ui-test-report/*.xml'
+                    robot archiveDirName: 'robot-plugin', outputPath: 'ui-test-report/', overwriteXAxisLabel: '', passThreshold: 100.0, unstableThreshold: 100.0
                 }
             }
         }
