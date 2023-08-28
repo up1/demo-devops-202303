@@ -20,5 +20,5 @@ Check hello message
 Try to open in browser
     [Arguments]  ${target_url}  ${browser_type}
     Open Browser    ${target_url}    ${browser_type} 
-    ...  remote_url=http://188.166.239.114:4444
+    ...  remote_url=http://159.65.15.235:4444
     Maximize Browser Window
