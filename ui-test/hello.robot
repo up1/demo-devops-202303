@@ -1,6 +1,7 @@
 *** Settings ***
 Library    SeleniumLibrary
 Library    Collections
+Library    OperatingSystem
 Test Teardown  Close All Browsers
 
 *** Variables ***
@@ -19,6 +20,7 @@ Check hello message
 
 Try to open in browser
     [Arguments]  ${target_url}  ${browser_type}
+    ${target_url}=  Get Environment Variable    FRONTEND_URL
     Open Browser    ${target_url}    ${browser_type} 
     ...  remote_url=http://159.65.15.235:4444
     Maximize Browser Window
