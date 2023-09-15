@@ -7,7 +7,13 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class BackSpringboot2Application {
 
 	public static void main(String[] args) {
+
 		SpringApplication.run(BackSpringboot2Application.class, args);
+		try {
+			Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 }
